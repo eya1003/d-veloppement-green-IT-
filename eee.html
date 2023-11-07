@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shyamoli Engineering University">
+    <meta name="author" content="Your Name">
+    <title>Shyamoli Engineering University</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" type="text/css">
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="assets/plugins/flexslider/flexslider.css" media="all">
+    <link id="theme-style" rel="stylesheet" href="assets/css/style.css" media="all">
+</head>
+<body class="home-page">
+    <div class="wrapper">
+        <!-- HEADER -->
+        <div id="header-container"></div>
+
+        <!-- CONTENT -->
+        <div class="content container">
+            <div class="page-wrapper">
+                <header class="page-heading clearfix">
+                    <h1 class="heading-title float-left">Electrical & Electronics Engineering</h1>
+                    <div class="breadcrumbs float-right">
+                        <ul class="breadcrumbs-list">
+                            <li class="breadcrumbs-label">You are here:</li>
+                            <li><a href="index.html">Home</a><i class="fas fa-angle-right"></i></li>
+                            <li><a href="courses.html">Course</a><i class="fas fa-angle-right"></i></li>
+                            <li class="current">EEE</li>
+                        </ul>
+                    </div>
+                </header>
+                <div class="page-content">
+                    <div class="row page-row">
+                        <div class="course-wrapper col-lg-8 col-md-7">
+                            <article class="course-item">
+                                <div class="embed-responsive embed-responsive-16by9 mb-4 rounded">
+                                    <iframe class="embed-responsive-item" width="750" height="422" src="https://www.youtube.com/embed/RTlrGncbd8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                                </div>
+                                <div class="page-row box box-border rounded">
+                                    <ul class="list-unstyled no-margin-bottom">
+                                        <li><strong>Start Date:</strong> <em>01 Jan 2023</em></li>
+                                        <li><strong>Duration:</strong> <em>4 years</em></li>
+                                        <li><strong>Location:</strong> <em>In Campus</em></li>
+                                    </ul>
+                                </div>
+                                <div class="page-row">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                                </div>
+                            </article>
+                        </div>
+                        <aside class="page-sidebar col-lg-3 offset-lg-1 col-md-4 offset-md-1">
+                            <section class="widget has-divider">
+                                <h3 class="title">Why SEU</h3>
+                                <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                <a class="btn btn-danger rounded" href="registration.html"><i class="fas fa-arrow-circle-right"></i>Apply Now</a>
+                            </section>
+                            <section class="widget has-divider">
+                                <h3 class="title">Enquire about this course</h3>
+                                <p>Donec pulvinar arcu lacus, vel aliquam libero scelerisque a. Cras mi tellus, vulputate eu eleifend at, consectetur fringilla lacus. Nulla ut purus.</p>
+                                <p class="tel"><i class="fas fa-phone"></i>Tel: +8801712345678</p>
+                                <p class="email"><i class="fas fa-envelope"></i>Email: <a href="mailto:example@website.com">example@website.com</a></p>
+                            </section>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/plugins/jquery-3.4.1.min.js" defer></script>
+    <script src="assets/plugins/popper.min.js" defer></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js" defer></script>
+    <script src="assets/plugins/back-to-top.js" defer></script>
+    <script src="assets/plugins/flexslider/jquery.flexslider-min.js" defer></script>
+    <script src="assets/plugins/jflickrfeed/jflickrfeed.min.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+        // Check if the header content is cached
+        const cachedHeader = localStorage.getItem('cachedHeader');
+        if (cachedHeader) {
+            // If the content is cached, inject it into the container
+            document.getElementById('header-container').innerHTML = cachedHeader;
+        } else {
+            // Otherwise, load the header content from the server
+            fetch('header.html')
+                .then(response => response.text())
+                .then(content => {
+                    document.getElementById('header-container').innerHTML = content;
+                    // Store the content in cache
+                    localStorage.setItem('cachedHeader', content);
+                });
+        }
+    </script>
+    <script>
+        // Use fetch to retrieve the content of the footer.html file
+        fetch('footer.html')
+          .then(response => response.text())
+          .then(content => {
+            // Insert the content into the container
+            document.getElementById('footer-container').innerHTML = content;
+          });
+    </script>
+</body>
+</html>
